@@ -1,0 +1,105 @@
+@media screen and (max-width:480px)
+{
+.wrapper {
+	background: rgb(243, 245, 248); height: 640px;
+}
+.iphone {
+	display: none;
+}
+.fluid-white {
+	display: none;
+}
+.wp2 {
+	margin-bottom: 30px;
+}
+.wp4 {
+	margin-bottom: 30px;
+}
+.wp5 {
+	margin-bottom: 30px;
+}
+.light-box {
+	margin-bottom: 30px;
+}
+.legals {
+	margin: 0px; padding: 0px; text-align: center;
+}
+.credit {
+	text-align: center;
+}
+.hero {
+	padding: 20px 0px 100px;
+}
+.hero h1 {
+	font-size: 28px;
+}
+.hero h2 {
+	font-size: 11px;
+}
+.inner {
+	padding-top: 120px;
+}
+.wp4 {
+	margin-bottom: 0px;
+}
+body.home footer {
+	padding: 20px 0px !important;
+}
+.learn-more-btn {
+	margin-top: 20px;
+}
+.flex-direction-nav {
+	display: none;
+}
+.flexslider {
+	padding-top: 40px;
+}
+}
+@media screen and (max-width:1024px)
+{
+.wp3 {
+	background-position: 50px 0px;
+}
+.swag {
+	background-attachment: scroll;
+}
+.subscribe {
+	background-attachment: scroll;
+}
+.intro {
+	padding: 60px 30px;
+}
+}
+@media screen and (max-width:1280px)
+{
+.wp3 {
+	background-position: 50px 0px;
+}
+}
+@media screen and (max-width:991px) and (min-width:480px)
+{
+.iphone {
+	display: none;
+}
+.fluid-white {
+	display: none;
+}
+.wrapper {
+	background: rgb(243, 245, 248); height: 540px;
+}
+.wp2 {
+	margin-bottom: 30px;
+}
+.wp5 {
+	margin-bottom: 30px;
+}
+.light-box {
+	margin-bottom: 30px;
+}
+.legals {
+	margin: 0px; padding: 0px; text-align: center;
+}
+.credit {
+	text-align: center;
+}
+}

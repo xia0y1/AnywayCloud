@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.anywaycloud.dao.UserFileMapper" >
+  <resultMap id="BaseResultMap" type="com.anywaycloud.model.UserFile" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="fid" property="fid" jdbcType="INTEGER" />
+    <result column="favor" property="favor" jdbcType="INTEGER" />
+    <result column="downtimes" property="downtimes" jdbcType="INTEGER" />
+    <result column="in_share" property="inShare" jdbcType="BIT" />
+    <result column="in_recycle" property="inRecycle" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, uid, fid, favor, downtimes, in_share, in_recycle
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from userfile
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from userfile
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.anywaycloud.model.UserFile" >
+    insert into userfile (id, uid, fid, 
+      favor, downtimes, in_share, 
+      in_recycle)
+    values (#{id,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{fid,jdbcType=INTEGER}, 
+      #{favor,jdbcType=INTEGER}, #{downtimes,jdbcType=INTEGER}, #{inShare,jdbcType=BIT}, 
+      #{inRecycle,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.anywaycloud.model.UserFile" >
+    insert into userfile
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="uid != null" >
+        uid,
+      </if>
+      <if test="fid != null" >
+        fid,
+      </if>
+      <if test="favor != null" >
+        favor,
+      </if>
+      <if test="downtimes != null" >
+        downtimes,
+      </if>
+      <if test="inShare != null" >
+        in_share,
+      </if>
+      <if test="inRecycle != null" >
+        in_recycle,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="uid != null" >
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="fid != null" >
+        #{fid,jdbcType=INTEGER},
+      </if>
+      <if test="favor != null" >
+        #{favor,jdbcType=INTEGER},
+      </if>
+      <if test="downtimes != null" >
+        #{downtimes,jdbcType=INTEGER},
+      </if>
+      <if test="inShare != null" >
+        #{inShare,jdbcType=BIT},
+      </if>
+      <if test="inRecycle != null" >
+        #{inRecycle,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.anywaycloud.model.UserFile" >
+    update userfile
+    <set >
+      <if test="uid != null" >
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="fid != null" >
+        fid = #{fid,jdbcType=INTEGER},
+      </if>
+      <if test="favor != null" >
+        favor = #{favor,jdbcType=INTEGER},
+      </if>
+      <if test="downtimes != null" >
+        downtimes = #{downtimes,jdbcType=INTEGER},
+      </if>
+      <if test="inShare != null" >
+        in_share = #{inShare,jdbcType=BIT},
+      </if>
+      <if test="inRecycle != null" >
+        in_recycle = #{inRecycle,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.anywaycloud.model.UserFile" >
+    update userfile
+    set uid = #{uid,jdbcType=INTEGER},
+      fid = #{fid,jdbcType=INTEGER},
+      favor = #{favor,jdbcType=INTEGER},
+      downtimes = #{downtimes,jdbcType=INTEGER},
+      in_share = #{inShare,jdbcType=BIT},
+      in_recycle = #{inRecycle,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
